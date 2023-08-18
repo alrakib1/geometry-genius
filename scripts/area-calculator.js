@@ -1,30 +1,29 @@
 // triangle calculator
-function calculateTriangleArea (){
-    const baseField = document.getElementById('triangle-base');
-    const baseValueText = baseField.value ;
-    const base = parseFloat(baseValueText);
-    
+function calculateTriangleArea() {
+  const base = getInputValue("triangle-base");
 
-    const heightField = document.getElementById('triangle-height');
-    const heightValueText = heightField.value;
-    const height = parseFloat(heightValueText);
-    
-    const area = 0.5 * height * base;
-    console.log(area);
+  const height = getInputValue("triangle-height");
 
-    const areaSpan = document.getElementById('triangle-area');
-    areaSpan.innerText = area;
+  const area = 0.5 * height * base;
+  setElementInnerText("triangle-area", area);
 }
-function calculateRectangleArea(){
-    const widthField = document.getElementById('rectangle-width');
-    const widthValueText = widthField.value;
-    const width = parseFloat(widthValueText);
-    
-    const lengthField = document.getElementById('rectangle-length');
-    const lengthValueText = lengthField.value;
-    const length = parseFloat(lengthValueText);
-    
-    const area = width * length;
-    const areaField = document.getElementById('rectangle-area');
-    areaField.innerText = area;
+// Rectangle Calculator
+function calculateRectangleArea() {
+  const width = getInputValue("rectangle-width");
+  const length = getInputValue("rectangle-length");
+  const area = width * length;
+  setElementInnerText("rectangle-area", area);
+}
+function calculateParallelogramArea() {
+  const base = getInputValue("parallelogram-base");
+  const height = getInputValue("parallelogram-height");
+  const area = base * height;
+  setElementInnerText("Parallelogram-area", area);
+}
+
+function calculateEllipseArea(){
+    const majorRadius = getInputValue("ellipse-major-radius");
+    const minorRadius = getInputValue('ellipse-minor-radius');
+    const area = 3.14 * majorRadius * minorRadius;
+    setElementInnerText('ellipse-area', area)
 }
