@@ -1,4 +1,4 @@
-// triangle calculator
+// triangle area calculator
 function calculateTriangleArea() {
   const base = getInputValue("triangle-base");
   const height = getInputValue("triangle-height");
@@ -10,7 +10,7 @@ function calculateTriangleArea() {
   setElementInnerText("triangle-area", area);
   addToCalculationEntry('Triangle',area);
 }
-// Rectangle Calculator
+// Rectangle area Calculator
 function calculateRectangleArea() {
   const width = getInputValue("rectangle-width");
   const length = getInputValue("rectangle-length");
@@ -22,7 +22,7 @@ function calculateRectangleArea() {
   setElementInnerText("rectangle-area", area);
   addToCalculationEntry('Rectangle',area);
 }
-// Parallelogram Calculator
+// Parallelogram area Calculator
 function calculateParallelogramArea() {
   const base = getInputValue("parallelogram-base");
   const height = getInputValue("parallelogram-height");
@@ -35,7 +35,7 @@ function calculateParallelogramArea() {
   // add to calculation entry
   addToCalculationEntry('Parallelogram',area);
 }
-// Ellipse Calculator
+// Ellipse area Calculator
 function calculateEllipseArea() {
   const majorRadius = getInputValue("ellipse-major-radius");
   const minorRadius = getInputValue("ellipse-minor-radius");
@@ -51,3 +51,28 @@ function calculateEllipseArea() {
 // set the proper type of input field
 // check type
 
+// rhombus area calculator
+function calculateRhombusArea(){
+  const d1 = getInputValue('rhombus-major');
+  const d2 = getInputValue('rhombus-minor');
+  if(isNaN(d1)||isNaN(d2)){
+    alert('Please insert number');
+    return;
+  }
+const area = d1 * d2;
+setElementInnerText('rhombus-area',area);
+addToCalculationEntry('rhombus',area);
+}
+
+// Pentagon area Calculator
+function calculatePentagonArea(){
+  const p = getInputValue('pentagon-major');
+  const b = getInputValue('pentagon-minor');
+  if(isNaN(p)||isNaN(b)){
+    alert('Please insert number');
+    return;
+  }
+  const area = 0.5 * p * b;
+  setElementInnerText('pentagon-area',area);
+  addToCalculationEntry('pentagon',area);
+}
